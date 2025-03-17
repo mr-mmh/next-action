@@ -1,0 +1,54 @@
+{
+    "name": "@mrmmh/next-action",
+    "version": "0.0.0",
+    "description": "",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "tsup src",
+        "release": "changeset",
+        "ci:publish": "pnpm build && changeset publish --access public",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint"
+    },
+    "repository": {
+        "url": "https://github.com/mr-mmh/next-action"
+    },
+    "keywords": [
+        "next",
+        "action",
+        "server functions"
+    ],
+    "author": "mohammad mahdi heidarnia",
+    "license": "ISC",
+    "devDependencies": {
+        "@changesets/cli": "^2.28.1",
+        "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+        "@types/node": "^20.17.24",
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "eslint": "^8.57.1",
+        "eslint-config-next": "14.2.21",
+        "prettier": "^3.5.3",
+        "tsup": "^8.4.0",
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "zod": "^3.24.1"
+    },
+    "peerDependencies": {
+        "zod": "^3.24.1",
+        "react": "^18",
+        "react-dom": "^18",
+        "next": "^14"
+    }
+}
